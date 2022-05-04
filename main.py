@@ -6,9 +6,25 @@ import csv
 import os
 from csv import writer
 
-ejemplo = pd.DataFrame()
-df = pd.DataFrame(np.random.randint(0, 5, size=(100, 4)), columns=["aleatorio"])
+
+df = pd.DataFrame(np.random.randint(0, 5, size=(100, 1)), columns=["aleatorio"])
 df.to_csv("aleatorio.csv")
+
+#función que calcule la media con el DataFrame creado antes y lo añada a la misma del
+def media_desviacion(df):
+    media = df.mean()
+    desviacion = df.std()
+    df['media'] = media
+    df['desviacion'] = desviacion
+    return df
+
+#función que te calcule la desviación estándar con el DataFrame creado antes y lo añada al mismo 
+def desviacion_estandar(df):
+    desviacion = df.std()
+    df['desviacion'] = desviacion
+    return df
+
+
 
 #segunda prueba para añadir columna
 
