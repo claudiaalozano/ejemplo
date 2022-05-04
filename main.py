@@ -12,16 +12,15 @@ df.to_csv("aleatorio.csv")
 
 
 class arch:
-    def __init__(self, df):
-        self.df = pd.read_csv(df)
+    def __init__(self, direccion):
+        self.direccion = pd.read_csv(direccion)
 
-        def media_desviacion(self):
-            media = self.df["aleatorio"].mean()
-            desviacion = self.df["aleatorio"].std()
-            return media, desviacion
+    def media_desviacion(self):
+        media = self.direccion["aleatorio"].mean()
+        desviacion = self.direccion["aleatorio"].std()
+        return media, desviacion
 
-archivo = arch("aleatorio.csv") #instancia de la clase
-print(archivo.media_desviacion())
+
 
 
 
