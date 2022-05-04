@@ -23,9 +23,10 @@ class a:
         percentiles = self.direccion["aleatorio"].quantile([0.25, 0.5, 0.75])
         mediana = self.direccion["aleatorio"].median()
         return percentiles, mediana
+    
     def diagrama_de_barras(self):
         fig, ax = plt.subplots
-        self.direccion["aleatorio"].plot(kind="pie" , ax = ax, title="Diagrama de Barras")
+        self.direccion["aleatorio"].plot(kind="bar" , ax = ax, title="Diagrama de Barras")
         plt.savefig("diagrama_de_barras.png")
         plt.show()
 
@@ -42,6 +43,8 @@ class a:
 archivo = a("aleatorio.csv")
 print(archivo.media_desviacion())
 print(archivo.percentiles_mediana())
+print(archivo.diagrama_de_barras())
+print(archivo.cuanto())
 
 
 
