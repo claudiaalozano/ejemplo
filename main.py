@@ -10,15 +10,19 @@ from csv import writer
 df = pd.DataFrame(np.random.randint(0, 5, size=(100, 1)), columns=["aleatorio"])
 df.to_csv("aleatorio.csv")
 
-#función que calcule la media con el DataFrame creado antes y lo añada a la misma del
 
-def __init__(self, df):
-    media = df.mean()
-    desviacion = df.std()
-    print("Media: ", media)
-    print("Desviacion: ", desviacion)
-    
-#función que te calcule la desviación estándar con el DataFrame creado antes y lo añada al mismo 
+class arch:
+    def __init__(self, df):
+        self.df = pd.read_csv(df)
+
+        def media_desviacion(self):
+            media = self.df["aleatorio"].mean()
+            desviacion = self.df["aleatorio"].std()
+            return media, desviacion
+
+archivo = arch("aleatorio.csv") #instancia de la clase
+print(archivo.media_desviacion())
+
 
 
 
