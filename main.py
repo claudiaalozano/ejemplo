@@ -11,18 +11,27 @@ df = pd.DataFrame(np.random.randint(0, 5, size=(100, 1)), columns=["aleatorio"])
 df.to_csv("aleatorio.csv")
 
 
-class arch:
+class a:
     def __init__(self, direccion):
         self.direccion = pd.read_csv(direccion)
 
-    def media_desviacion_percentiles(self):
+    def media_desviacion(self):
         media = self.direccion["aleatorio"].mean()
         desviacion = self.direccion["aleatorio"].std()
+        return media, desviacion, 
+    def percentiles_mediana(self):
         percentiles = self.direccion["aleatorio"].quantile([0.25, 0.5, 0.75])
-        return media, desviacion, percentiles
+        mediana = self.direccion["aleatorio"].median()
+        return percentiles, mediana
+    def diagrama_de_barras(self):
+        fig, ax = plt.subplots
+        self.direccion["aleatorio"].plot(kind="pie" , ax = ax, title="Diagrama de Barras")
+        plt.savefig("diagrama_de_barras.png")
+        plt.show()
 
-archivo = arch("aleatorio.csv")
+archivo = a("aleatorio.csv")
 print(archivo.media_desviacion())
+print(archivo.percentiles_mediana())
 
 
 
