@@ -29,6 +29,16 @@ class a:
         plt.savefig("diagrama_de_barras.png")
         plt.show()
 
+    def cuanto(self):
+        i = 0
+        for i in self.direccion["aleatorio"]:
+            if i > 60:
+                i += 1
+            else:
+                i = 0
+        return i
+
+
 archivo = a("aleatorio.csv")
 print(archivo.media_desviacion())
 print(archivo.percentiles_mediana())
