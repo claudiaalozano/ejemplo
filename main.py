@@ -15,10 +15,15 @@ class arch:
     def __init__(self, direccion):
         self.direccion = pd.read_csv(direccion)
 
-    def media_desviacion(self):
+    def media_desviacion_percentiles(self):
         media = self.direccion["aleatorio"].mean()
         desviacion = self.direccion["aleatorio"].std()
-        return media, desviacion
+        percentiles = self.direccion["aleatorio"].quantile([0.25, 0.5, 0.75])
+        return media, desviacion, percentiles
+
+archivo = arch("aleatorio.csv")
+print(archivo.media_desviacion())
+
 
 
 
