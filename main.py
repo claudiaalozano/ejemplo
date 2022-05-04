@@ -25,10 +25,15 @@ class a:
         return percentiles, mediana
     
     def diagrama_de_barras(self):
-        fig, ax = plt.subplots
-        self.direccion["aleatorio"].plot(kind="bar" , ax = ax, title="Diagrama de Barras")
+        self.direccion["aleatorio"].plot(kind="bar" , title="Diagrama de Barras")
         plt.savefig("diagrama_de_barras.png")
         plt.show()
+
+    def diagrama_de_dispersion(self):
+        self.direccion["aleatorio"].plot(kind="hist", title="Diagrama de Dispersion")
+        plt.savefig("diagrama_de_dispersion.png")   
+        plt.show()
+
 
     def cuanto(self):
         i = 0
